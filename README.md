@@ -1,1 +1,0 @@
-# Qurish.AI
