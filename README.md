@@ -3,7 +3,7 @@
 
 ## Overview
 Welcome to مِشَكِّلاتي.ai ... An innovative Arabic text diacritization (Tashkeel) engine developed using advanced neural and statistical techniques. This project aims to accurately predict and add diacritics to Arabic text, enhancing readability and understanding. 
-The مِشَكِّلاتي.ai model achieved first-place on Kaggle, showcasing its exceptional performance 🥇
+The مِشَكِّلاتي.ai model achieved [first-place on Kaggle](https://www.kaggle.com/competitions/cufe-cmp-credit-nlp-fall-2023/leaderboard), showcasing its exceptional performance 🥇
 
 ## Dual- Model Architecture
 The مِشَكِّلاتي.ai diacritization system employs a dual-model architecture that consists of:
