@@ -97,6 +97,17 @@ if __name__ == '__main__':
             # Update the progress bar description with the current accuracy
             epoch_progress.set_description(f"Epoch {epoch + 1}/{epochs}, Train Accuracy: {metric.compute()*100:.4f}%", refresh=True)
             # total_correct = 0 
+
+            # Save the model and optimizer state dictionary after each epoch
+        checkpoint_path = f'../checkpoints/checkpoint_epoch_{epoch + 1}.pt'
+        torch.save({
+            'epoch': epoch + 1,
+            'model_state_dict': meshakkelaty.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'loss': loss,
+            'metric': metric.compute(),
+        }, checkpoint_path)
+        
         # Print a newline to move to the next line after the epoch is finished
         print(f'Epoch {epoch + 1}/{epochs}, Train Accuracy: {metric.compute()*100:.4f}%')
         metric.reset()
