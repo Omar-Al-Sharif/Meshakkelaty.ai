@@ -3,7 +3,6 @@ from torch.utils.data import Dataset
 from tqdm import tqdm
 import re
 import pickle as pkl
-import os
 
 class TashkeelDataset(Dataset):
     def __init__(self, name, data):
