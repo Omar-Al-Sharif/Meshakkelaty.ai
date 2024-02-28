@@ -120,7 +120,7 @@ class TashkeelDataset(Dataset):
 
 if __name__ == '__main__':
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    train_dataset = TashkeelDataset('train dataset','../data/val.txt')
+    train_dataset = TashkeelDataset('train dataset','../data/train.txt')
     val_dataset = TashkeelDataset('validation dataset','../data/val.txt')
     
     # Save the tensors separately
