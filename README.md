@@ -21,9 +21,11 @@ To use مِشَكِّلاتي.ai, follow these steps:
     - `cd Meshakkelaty.ai/scripts`
 5. Prepare your data by running the following command
     - `python tokenize_dataset.py`
-6. Train Meshakkelaty.ai on your data
-    - `python train.py`  
-7. Diacritize Arabic text by running:
+6. Train the neural model on your data
+    - `python train_neural_model.py`  
+6. Train the statistical model on your data
+    - `python train_statistical_model.py`  
+8. Diacritize Arabic text by running:
     - `python predict.py`
 
 ## Contributors
