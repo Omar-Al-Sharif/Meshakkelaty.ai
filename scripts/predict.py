@@ -3,15 +3,16 @@ import pickle as pkl
 import numpy as np
 from tokenize_dataset import TashkeelDataset
 from train_neural_model import MeshakkelatyModel
-
+from train_statistical_model import import_statistical_model, post_process_model
 
 TEST_INPUT_PATH = '../data/test_input.txt'
+TEST_OUTPUT_PATH = '../data/test_output.txt'
 
 # Load the ID_TO_DIACRITIC mapping
 with open('../utilities/pickle_files/ID_TO_DIACRITIC.pickle', 'rb') as file:
     ID_TO_DIACRITIC = pkl.load(file)
 
-def inference(tashkeel_dataset: TashkeelDataset, model):
+def neural_model_inference(tashkeel_dataset: TashkeelDataset, model):
 
     # Predict diacritics using the model
     with torch.no_grad():
@@ -36,6 +37,19 @@ def inference(tashkeel_dataset: TashkeelDataset, model):
     return output_line
 
 
+def statistical_model_inference(input, word_dict, unigram):
+
+    words = input.split(' ')
+    improved_tashkeel = ''
+    for word in words:
+        corrected_word = post_process_model(word_dict, unigram, word)
+        improved_tashkeel += f' {corrected_word}'
+    
+    return improved_tashkeel
+ 
+    
+
+
 if __name__ == '__main__':
 
     test_dataset = TashkeelDataset('test dataset', TEST_INPUT_PATH)
@@ -44,7 +58,18 @@ if __name__ == '__main__':
     # Load the previously saved weights
     latest_checkpoint = torch.load(checkpoint_path)
     meshakkelaty.load_state_dict(latest_checkpoint['model_state_dict'])
-    neural_model_predictions = inference(test_dataset, meshakkelaty)
+
+    neural_model_predictions = neural_model_inference(test_dataset, meshakkelaty)
+
+    statistical_model_dict, statistical_model_unigram = import_statistical_model("./utilities/pickle_files/STATISTICAL_MODEL.pickle")
+    statistical_model_predictions = statistical_model_inference(neural_model_predictions, statistical_model_dict, statistical_model_unigram)
+
+    with open(TEST_OUTPUT_PATH, 'w', encoding='utf-8') as output_file:
+        file.write(statistical_model_predictions)
+
+
+
+
 
 
     
