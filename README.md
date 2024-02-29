@@ -23,9 +23,11 @@ To use مِشَكِّلاتي.ai, follow these steps:
     - `python tokenize_dataset.py`
 6. Train the neural model on your data
     - `python train_neural_model.py`  
-6. Train the statistical model on your data
-    - `python train_statistical_model.py`  
-8. Diacritize Arabic text by running:
+7. Train the statistical model on your data
+    - `python train_statistical_model.py` 
+8. Put your input text inside:
+    - `../data/test_input.txt`
+9. Diacritize the input text by running:
     - `python predict.py`
 
 ## Contributors
