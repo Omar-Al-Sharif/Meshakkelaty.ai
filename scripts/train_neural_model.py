@@ -99,7 +99,7 @@ if __name__ == '__main__':
             # total_correct = 0 
 
             # Save the model and optimizer state dictionary after each epoch
-        checkpoint_path = f'../checkpoints/checkpoint_epoch_{epoch + 1}.pt'
+        checkpoint_path = f'../checkpoints/checkpoint_latest.pt'
         torch.save({
             'epoch': epoch + 1,
             'model_state_dict': meshakkelaty.state_dict(),
