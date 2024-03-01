@@ -1,8 +1,9 @@
-# AI Arabic Diacritization Engine - مِشَكِّلاتي.ai
-![Meshakkelaty](https://github.com/Omar-Al-Sharif/Meshakkelaty.ai/assets/68480294/5e0d1bf8-a081-4b3f-b726-bca3c866d1ce)
+# AI Arabic Tashkeel Engine - مِشَكِّلاتي.ai
+
+<img src="./Meshakkelaty.png">
 
 ## Overview
-Welcome to مِشَكِّلاتي.ai ... An innovative Arabic text diacritization (Tashkeel) engine developed using advanced neural and statistical techniques. This project aims to accurately predict and add diacritics to Arabic text, enhancing readability and understanding. 
+Welcome to مِشَكِّلاتي.ai ... An innovative Arabic text diacritization (Tashkeel) engine developed using advanced neural and statistical techniques. This project aims to accurately predict and add diacritics to Arabic text, enhancing readability, understandability, and Arabic text processing.
 The مِشَكِّلاتي.ai model achieved [first-place on Kaggle](https://www.kaggle.com/competitions/cufe-cmp-credit-nlp-fall-2023/leaderboard), showcasing its exceptional performance 🥇
 
 ## Dual- Model Architecture
